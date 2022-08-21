@@ -1,9 +1,23 @@
 ﻿<Application x:Class="ViewerCryptocurrencies.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:ViewerCryptocurrencies"
-             StartupUri="MainWindow.xaml">
+             xmlns:local="clr-namespace:ViewerCryptocurrencies">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--  Colors  -->
+                <ResourceDictionary Source="Resources/Xaml/Slyles/Colors.xaml" />
+
+                <!--  Commands  -->
+                <ResourceDictionary Source="Resources/Xaml/Slyles/Commands.xaml" />
+
+                <!--  Buttons  -->
+                <ResourceDictionary Source="Resources/Xaml/Slyles/Buttons.xaml" />
+
+                <!--  Sizes  -->
+                <ResourceDictionary Source="Resources/Xaml/ControlSettings.xaml" />
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

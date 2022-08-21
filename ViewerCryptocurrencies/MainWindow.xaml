@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:ViewerCryptocurrencies.UI.ViewModels"
+        xmlns:v="clr-namespace:ViewerCryptocurrencies.UI.Views"
         mc:Ignorable="d"
-        Height="450" Width="800"
+        Height="{StaticResource WindowHeigth}" Width="{StaticResource WindowWidth}"
         
         AllowsTransparency="True"
         Background="Transparent"
@@ -19,15 +20,15 @@
     
     <Grid>
 
-        <!--<Grid.Resources>
+        <Grid.Resources>
             <DataTemplate DataType="{x:Type vm:LayoutViewModel}">
-                <views:LayoutView />
-            </DataTemplate
-        </Grid.Resources>-->
+                <v:LayoutView />
+            </DataTemplate>
+        </Grid.Resources>
 
        
 
-        <!--<ContentControl Content="{Binding CurrentViewModel}" />-->
+        <ContentControl Content="{Binding CurrentViewModel}" />
 
     </Grid>
 </Window>

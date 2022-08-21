@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:cor="clr-namespace:System;assembly=mscorlib"
+                    >
+
+    <!--  MainWindow  -->
+    <cor:Double x:Key="WindowXRadius">15</cor:Double>
+    <cor:Double x:Key="WindowYRadius">15</cor:Double>
+    <cor:Double x:Key="WindowHeigth">814.911</cor:Double>
+    <cor:Double x:Key="WindowWidth">1264.982</cor:Double>
+
+</ResourceDictionary>
