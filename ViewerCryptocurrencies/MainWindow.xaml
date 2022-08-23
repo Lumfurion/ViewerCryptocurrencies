@@ -24,6 +24,18 @@
             <DataTemplate DataType="{x:Type vm:LayoutViewModel}">
                 <v:LayoutView />
             </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+                <v:HomeView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:ShowCourseViewModel}">
+                <v:ShowCourseView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:SetingsViewModel}">
+                <v:SetingsView />
+            </DataTemplate>
         </Grid.Resources>
 
        

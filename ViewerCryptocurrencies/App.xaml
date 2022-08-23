@@ -8,14 +8,23 @@
                 <!--  Colors  -->
                 <ResourceDictionary Source="Resources/Xaml/Slyles/Colors.xaml" />
 
+                <!--  Sizes  -->
+                <ResourceDictionary Source="Resources/Xaml/ControlSettings.xaml" />
+
+
                 <!--  Commands  -->
                 <ResourceDictionary Source="Resources/Xaml/Slyles/Commands.xaml" />
+                
+               
 
                 <!--  Buttons  -->
                 <ResourceDictionary Source="Resources/Xaml/Slyles/Buttons.xaml" />
+                <!--  MenuButton  -->
+                <ResourceDictionary Source="Resources/Xaml/Slyles/MenuButton.xaml" />
 
-                <!--  Sizes  -->
-                <ResourceDictionary Source="Resources/Xaml/ControlSettings.xaml" />
+
+
+
 
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

@@ -15,4 +15,10 @@
     <ProjectReference Include="..\ViewerCryptocurrencies.BusinessLogic\ViewerCryptocurrencies.BusinessLogic.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Resources\Images\MenuSide\settings.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

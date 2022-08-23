@@ -21,13 +21,20 @@ namespace ViewerCryptocurrencies
             services.AddSingleton<NavigationStore>();
             services.AddSingleton<ModalNavigationStore>();
 
-            services.AddSingleton(CreateLayoutNavigationService);
-
-            //Registering ViewModels with Dependency Injection.
             services.AddSingleton<IMainViewModel, MainWindowViewModel>();
             services.AddSingleton(s => new MainWindow() { DataContext = s.GetRequiredService<IMainViewModel>() });
-            services.AddTransient<ILayoutViewModel, LayoutViewModel>(s => new LayoutViewModel());
 
+            //Registering ViewModels with Dependency Injection.
+            services.AddTransient<IHomeViewModel, HomeViewModel>();
+            services.AddTransient<IShowCourseViewModel, ShowCourseViewModel>();
+            services.AddTransient<ISetingsViewModel, SetingsViewModel>();
+
+            services.AddTransient<ILayoutViewModel, LayoutViewModel>(CreateLayoutViewModel);
+            services.AddTransient<ISideMenuViewModel, SideMenuViewModel>(CreateSideMenuViewModel);
+
+           
+            
+            services.AddSingleton(CreateLayoutNavigationService);
             _serviceProvider = services.BuildServiceProvider();
             
         }
@@ -50,6 +57,9 @@ namespace ViewerCryptocurrencies
 
 
         #region Creating objects
+
+        #region Navigation
+        
         /// <summary>
         /// Navigation to page Layout 
         /// </summary>
@@ -61,6 +71,61 @@ namespace ViewerCryptocurrencies
                 viewModel: serviceProvider.GetRequiredService<ILayoutViewModel>());
         }
 
+
+        private INavigationService CreateHomeNavigationService(IServiceProvider serviceProvider)
+        {
+            return new LayoutNavigationService<IHomeViewModel>(
+                serviceProvider.GetRequiredService<NavigationStore>(),
+                serviceProvider.GetRequiredService<IHomeViewModel>,
+                serviceProvider.GetRequiredService<ISideMenuViewModel>
+            );
+        }
+
+
+        
+
+        private INavigationService CreateShowCourseNavigationService(IServiceProvider serviceProvider)
+        {
+            return new LayoutNavigationService<IShowCourseViewModel>(
+                  serviceProvider.GetRequiredService<NavigationStore>(),
+                  serviceProvider.GetRequiredService<IShowCourseViewModel>,
+                  serviceProvider.GetRequiredService<ISideMenuViewModel>
+              );
+        }
+
+
+        private INavigationService CreateSetingsNavigationService(IServiceProvider serviceProvider)
+        {
+            return new LayoutNavigationService<ISetingsViewModel>(
+                 serviceProvider.GetRequiredService<NavigationStore>(),
+                 serviceProvider.GetRequiredService<ISetingsViewModel>,
+                 serviceProvider.GetRequiredService<ISideMenuViewModel>
+             );
+        }
+
+
+        #endregion
+
+        private LayoutViewModel CreateLayoutViewModel(IServiceProvider serviceProvider)
+        {
+            return new LayoutViewModel(
+                CreateSideMenuViewModel(serviceProvider),
+                serviceProvider.GetRequiredService<IHomeViewModel>()
+            );
+        }
+
+        private SideMenuViewModel CreateSideMenuViewModel(IServiceProvider serviceProvider)
+        {
+            return new SideMenuViewModel(
+                
+                CreateHomeNavigationService(serviceProvider),
+                CreateShowCourseNavigationService(serviceProvider),
+                CreateSetingsNavigationService(serviceProvider)
+                
+            );
+        }
+
+        
 
         #endregion
 
