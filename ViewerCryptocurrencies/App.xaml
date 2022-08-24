@@ -11,7 +11,8 @@
                 <!--  Sizes  -->
                 <ResourceDictionary Source="Resources/Xaml/ControlSettings.xaml" />
 
-
+                <!--DataGrid-->
+                <ResourceDictionary Source="Resources/Xaml/Slyles/DataGrid.xaml" />
                 <!--  Commands  -->
                 <ResourceDictionary Source="Resources/Xaml/Slyles/Commands.xaml" />
                 

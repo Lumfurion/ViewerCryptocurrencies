@@ -10,15 +10,27 @@ namespace ViewerCryptocurrencies.Models
         [JsonProperty("symbol")]
         public string Symbol { get; set; }
 
+        /// <summary>
+        /// Name of cryptocurrency
+        /// </summary>
         [JsonProperty("name")]
         public string Name { get; set; }
 
+        /// <summary>
+        /// Image of cryptocurrency
+        /// </summary>
         [JsonProperty("image")]
         public Uri Image { get; set; }
 
+        /// <summary>
+        /// CurrentPrice of cryptocurrency
+        /// </summary>
         [JsonProperty("current_price")]
         public double CurrentPrice { get; set; }
 
+        /// <summary>
+        /// Рыночная капитализация
+        /// </summary>
         [JsonProperty("market_cap")]
         public long MarketCap { get; set; }
 
@@ -27,7 +39,9 @@ namespace ViewerCryptocurrencies.Models
 
         [JsonProperty("fully_diluted_valuation")]
         public long? FullyDilutedValuation { get; set; }
-
+        /// <summary>
+        /// Объем(24 ч)
+        /// </summary>
         [JsonProperty("total_volume")]
         public long TotalVolume { get; set; }
 
@@ -49,6 +63,9 @@ namespace ViewerCryptocurrencies.Models
         [JsonProperty("market_cap_change_percentage_24h")]
         public double MarketCapChangePercentage24H { get; set; }
 
+        /// <summary>
+        /// Циркулирующее предложение
+        /// </summary>
         [JsonProperty("circulating_supply")]
         public double CirculatingSupply { get; set; }
 
