@@ -11,8 +11,15 @@
                 <!--  Sizes  -->
                 <ResourceDictionary Source="Resources/Xaml/ControlSettings.xaml" />
 
-                <!--DataGrid-->
-                <ResourceDictionary Source="Resources/Xaml/Slyles/DataGrid.xaml" />
+              
+
+                <!--ScrollBar-->
+                <ResourceDictionary Source="Resources/Xaml/Slyles/ScrollBar.xaml" />
+
+                
+                <!--ListBox-->
+                <ResourceDictionary Source="Resources/Xaml/Slyles/ListBox.xaml" />
+
                 <!--  Commands  -->
                 <ResourceDictionary Source="Resources/Xaml/Slyles/Commands.xaml" />
                 

@@ -36,9 +36,15 @@
             <DataTemplate DataType="{x:Type vm:SetingsViewModel}">
                 <v:SetingsView />
             </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:InfoCryptocurrencyViewModel}">
+                <v:InfoCryptocurrencyView />
+            </DataTemplate>
         </Grid.Resources>
 
-       
+        <!--<custom:Modal Panel.ZIndex="1" IsOpen="{Binding IsOpen}">
+            <ContentControl Content="{Binding CurrentModalViewModel}" />
+        </custom:Modal>-->
 
         <ContentControl Content="{Binding CurrentViewModel}" />
 

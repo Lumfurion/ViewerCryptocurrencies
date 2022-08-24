@@ -36,7 +36,9 @@ namespace ViewerCryptocurrencies.Models
 
         [JsonProperty("market_cap_rank")]
         public long MarketCapRank { get; set; }
-
+        /// <summary>
+        /// Рыночная капитализация при полной эмиссии
+        /// </summary>
         [JsonProperty("fully_diluted_valuation")]
         public long? FullyDilutedValuation { get; set; }
         /// <summary>
@@ -62,7 +64,8 @@ namespace ViewerCryptocurrencies.Models
 
         [JsonProperty("market_cap_change_percentage_24h")]
         public double MarketCapChangePercentage24H { get; set; }
-
+       
+        #region supply
         /// <summary>
         /// Циркулирующее предложение
         /// </summary>
@@ -74,19 +77,30 @@ namespace ViewerCryptocurrencies.Models
 
         [JsonProperty("max_supply")]
         public long? MaxSupply { get; set; }
+        #endregion
 
+        /// <summary>
+        /// ethereum change percentage
+        /// </summary>
         [JsonProperty("ath")]
         public double Ath { get; set; }
 
+        /// <summary>
+        /// ethereum change percentage
+        /// </summary>
         [JsonProperty("ath_change_percentage")]
         public double AthChangePercentage { get; set; }
 
         [JsonProperty("ath_date")]
         public DateTimeOffset AthDate { get; set; }
-
+        /// <summary>
+        /// ATLANT(Atl)
+        /// </summary>
         [JsonProperty("atl")]
         public double Atl { get; set; }
-
+        /// <summary>
+        /// ATLANT(Atl) change percentage
+        /// </summary>
         [JsonProperty("atl_change_percentage")]
         public double AtlChangePercentage { get; set; }
 
