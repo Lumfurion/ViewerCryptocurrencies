@@ -18,26 +18,43 @@ namespace ViewerCryptocurrencies
             IServiceCollection services = new ServiceCollection();
 
             //Registering Stores with Dependency Injection.
-            services.AddSingleton<NavigationStore>();
-            services.AddSingleton<ModalNavigationStore>();
-
-            services.AddSingleton<IMainViewModel, MainWindowViewModel>();
-            services.AddSingleton(s => new MainWindow() { DataContext = s.GetRequiredService<IMainViewModel>() });
-
-            //Registering ViewModels with Dependency Injection.
-            services.AddTransient<IHomeViewModel, HomeViewModel>();
-            services.AddTransient<IShowCourseViewModel, ShowCourseViewModel>();
-            services.AddTransient<ISetingsViewModel, SetingsViewModel>();
-
-            services.AddTransient<ILayoutViewModel, LayoutViewModel>(CreateLayoutViewModel);
-            services.AddTransient<ISideMenuViewModel, SideMenuViewModel>(CreateSideMenuViewModel);
+            Initstores(services);
 
            
-            
+            //Registering ViewModels with Dependency Injection.
+            services.AddTransient<IHomeViewModel, HomeViewModel>();
+
+            services.AddTransient<IShowCourseViewModel, ShowCourseViewModel>(s => new ShowCourseViewModel(
+             CreateInfoCryptocurrencyNavigationService(s), s.GetRequiredService<MarketStore>()
+              ));
+
+            services.AddTransient<ISetingsViewModel, SetingsViewModel>();
+            services.AddSingleton<IMainViewModel, MainWindowViewModel>();
+            services.AddSingleton(s => new MainWindow() { DataContext = s.GetRequiredService<IMainViewModel>() });
+            services.AddTransient<ILayoutViewModel, LayoutViewModel>(CreateLayoutViewModel);
+           
+            services.AddTransient<ISideMenuViewModel, SideMenuViewModel>(CreateSideMenuViewModel);
             services.AddSingleton(CreateLayoutNavigationService);
+
+            //Popup
+            services.AddTransient<IInfoCryptocurrencyViewModel, InfoCryptocurrencyViewModel>(s => new InfoCryptocurrencyViewModel(
+               s.GetRequiredService<MarketStore>(),
+               s.GetRequiredService<CloseModalNavigationService>()
+               ));
+
             _serviceProvider = services.BuildServiceProvider();
-            
+
         }
+
+        private static void Initstores(IServiceCollection services)
+        {
+            services.AddSingleton<NavigationStore>();
+            services.AddSingleton<ModalNavigationStore>();
+            services.AddSingleton<CloseModalNavigationService>();
+            services.AddSingleton<MarketStore>();
+        }
+
+
 
         #region Events
         protected override void OnStartup(StartupEventArgs e)
@@ -103,6 +120,14 @@ namespace ViewerCryptocurrencies
              );
         }
 
+
+        private INavigationService CreateInfoCryptocurrencyNavigationService(IServiceProvider serviceProvider)
+        {
+          
+            return new ModalNavigationService<IInfoCryptocurrencyViewModel>(
+               serviceProvider.GetRequiredService<ModalNavigationStore>(),
+               () => serviceProvider.GetRequiredService<IInfoCryptocurrencyViewModel>());
+        }
 
         #endregion
 

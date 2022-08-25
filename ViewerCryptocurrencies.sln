@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerCryptocurrencies.UI", "ViewerCryptocurrencies\ViewerCryptocurrencies.UI.csproj", "{4A42ADE6-569B-4C10-8FA4-5913A8D557E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewerCryptocurrencies.UI", "ViewerCryptocurrencies\ViewerCryptocurrencies.UI.csproj", "{4A42ADE6-569B-4C10-8FA4-5913A8D557E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerCryptocurrencies.Models", "ViewerCryptocurrencies.Models\ViewerCryptocurrencies.Models.csproj", "{692B6B2F-1455-4812-ABC1-04D542E83272}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewerCryptocurrencies.Models", "ViewerCryptocurrencies.Models\ViewerCryptocurrencies.Models.csproj", "{692B6B2F-1455-4812-ABC1-04D542E83272}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewerCryptocurrencies.BusinessLogic", "ViewerCryptocurrencies.BusinessLogic\ViewerCryptocurrencies.BusinessLogic.csproj", "{11A9945D-39C5-47E6-A2E3-B76FE71458FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViewerCryptocurrencies.BusinessLogic", "ViewerCryptocurrencies.BusinessLogic\ViewerCryptocurrencies.BusinessLogic.csproj", "{11A9945D-39C5-47E6-A2E3-B76FE71458FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModalControl", "ModalControl\ModalControl.csproj", "{F5DB31E3-9A26-404D-812B-8890199C5840}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{11A9945D-39C5-47E6-A2E3-B76FE71458FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11A9945D-39C5-47E6-A2E3-B76FE71458FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11A9945D-39C5-47E6-A2E3-B76FE71458FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5DB31E3-9A26-404D-812B-8890199C5840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5DB31E3-9A26-404D-812B-8890199C5840}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5DB31E3-9A26-404D-812B-8890199C5840}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5DB31E3-9A26-404D-812B-8890199C5840}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

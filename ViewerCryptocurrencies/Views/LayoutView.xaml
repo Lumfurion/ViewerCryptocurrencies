@@ -47,20 +47,7 @@
             <!--Footer-->
             <Border CornerRadius="0,0,5,5"  Background="#323437" Grid.Row="2" >
                 <Grid>
-                    <StackPanel 
-                        Margin="5"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Orientation="Horizontal"
-                        >
-                        <TextBlock
-                            Foreground="White"
-                            Text="{Binding TotalFiles, StringFormat='Total: {0}, '}" />
-
-                        <TextBlock
-                            Foreground="White"
-                            Text="{Binding FilesFound , StringFormat=Found: {0}}" />
-                    </StackPanel>
+                    
                 </Grid>
             </Border>
             

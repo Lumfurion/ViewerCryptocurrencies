@@ -1,5 +1,4 @@
-﻿
-
+﻿using System;
 using System.Collections.ObjectModel;
 using ViewerCryptocurrencies.BusinessLogic.Interfaces;
 using ViewerCryptocurrencies.BusinessLogic.Services;
@@ -24,8 +23,6 @@ namespace ViewerCryptocurrencies.UI.ViewModels
             }
         }
 
-
-
         public HomeViewModel()
         {
             _marketService = new MarketService();
@@ -34,13 +31,34 @@ namespace ViewerCryptocurrencies.UI.ViewModels
         private async void GetData()
         {
             Markets = await _marketService.GetMarket(perpage:10);
-           
         }
 
+        #region IDisposable Members
+        public event EventHandler? Disposed;
+        private bool _disposed = false;
 
+        /// <summary>
+        /// Dispose method
+        /// </summary>
         public void Dispose()
         {
-            
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
+        protected virtual void OnDispose(EventArgs e)
+        {
+            Disposed?.Invoke(this, e);
+        }
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing && !_disposed)
+            {
+                OnDispose(EventArgs.Empty);
+                _disposed = true;
+                Markets = null;
+            }
+
+        }
+        #endregion 
     }
 }

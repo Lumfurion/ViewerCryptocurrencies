@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:ViewerCryptocurrencies.UI.ViewModels"
         xmlns:v="clr-namespace:ViewerCryptocurrencies.UI.Views"
+        xmlns:custom="clr-namespace:ModalControl;assembly=ModalControl"
         mc:Ignorable="d"
         Height="{StaticResource WindowHeigth}" Width="{StaticResource WindowWidth}"
         
@@ -14,10 +15,6 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         >
-    
-    
-    
-    
     <Grid>
 
         <Grid.Resources>
@@ -36,17 +33,18 @@
             <DataTemplate DataType="{x:Type vm:SetingsViewModel}">
                 <v:SetingsView />
             </DataTemplate>
-
+            <!--Popup-->
             <DataTemplate DataType="{x:Type vm:InfoCryptocurrencyViewModel}">
                 <v:InfoCryptocurrencyView />
             </DataTemplate>
         </Grid.Resources>
-
-        <!--<custom:Modal Panel.ZIndex="1" IsOpen="{Binding IsOpen}">
+        <custom:Modal  Panel.ZIndex="1" IsOpen="{Binding IsOpen}">
             <ContentControl Content="{Binding CurrentModalViewModel}" />
-        </custom:Modal>-->
-
+        </custom:Modal>
         <ContentControl Content="{Binding CurrentViewModel}" />
+        
+
+       
 
     </Grid>
 </Window>

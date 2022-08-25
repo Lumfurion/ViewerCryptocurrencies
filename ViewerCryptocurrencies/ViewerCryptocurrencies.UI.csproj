@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ModalControl\ModalControl.csproj" />
     <ProjectReference Include="..\ViewerCryptocurrencies.BusinessLogic\ViewerCryptocurrencies.BusinessLogic.csproj" />
   </ItemGroup>
 

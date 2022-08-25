@@ -18,7 +18,7 @@ namespace ViewerCryptocurrencies.UI.Stores
             set
             {
                 _currentViewModel?.Dispose();
-                _currentViewModel = null;
+                //_currentViewModel = null;
                 _currentViewModel = value;
                 OnCurrentViewModelChanged();
             }

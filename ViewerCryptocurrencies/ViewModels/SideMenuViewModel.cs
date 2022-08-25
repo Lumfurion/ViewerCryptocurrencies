@@ -25,10 +25,6 @@ namespace ViewerCryptocurrencies.UI.ViewModels
             
         }
 
-       
-
-
-
         #region IDisposable Members
         public event EventHandler? Disposed;
         private bool _disposed = false;
